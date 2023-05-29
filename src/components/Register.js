@@ -2,8 +2,8 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Register(props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState({ email: "" });
+  const [password, setPassword] = useState({ password: "" });
 
   function handleEmail(event) {
     setEmail(event.target.value);
@@ -24,12 +24,14 @@ function Register(props) {
           className="register__email"
           placeholder="Email"
           onChange={handleEmail}
+          value={email.email}
         />
         <input
           className="register__password"
           placeholder="Пароль"
           type="password"
           onChange={handlePassword}
+          value={password.password}
         />
         <button className="register__button" type="submit">
           Зарегистрироваться

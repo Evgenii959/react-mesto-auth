@@ -2,8 +2,8 @@ import { useState } from "react";
 import PopupWithForm from "./PopupWithForm";
 
 function AddPlacePopup(props) {
-  const [name, setName] = useState("");
-  const [link, setLink] = useState("");
+  const [name, setName] = useState({ name: '' });
+  const [link, setLink] = useState({ link: '' });
 
   function handleChangeName(e) {
     setName(e.target.value);
@@ -45,6 +45,7 @@ function AddPlacePopup(props) {
         id="title-input"
         title="Вы пропустили это поле."
         onChange={handleChangeName}
+        value={name.name}
       />
       <span className="popup__name-error title-input-error"></span>
       <input
@@ -54,6 +55,7 @@ function AddPlacePopup(props) {
         placeholder="Ссылка на картинку"
         id="src-input"
         onChange={handleChangeLink}
+        value={link.link}
       />
       <span
         className="popup__name-error src-input-error"

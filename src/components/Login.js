@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 function Login(props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState({ email: "" });
+  const [password, setPassword] = useState({ password: "" });
 
   function handleLoginEmail(event) {
     setEmail(event.target.value);
@@ -23,12 +23,14 @@ function Login(props) {
           className="login__email"
           placeholder="Email"
           onChange={handleLoginEmail}
+          value={email.email}
         />
         <input
           className="login__password"
           placeholder="Пароль"
           type="password"
           onChange={handleLoginPassword}
+          value={password.password}
         />
         <button className="login__button" type="submit">
           Войти
